@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C21DACE12EB2760D0081FEE4 /* Obfuscate in Frameworks */ = {isa = PBXBuildFile; productRef = C21DACE02EB2760D0081FEE4 /* Obfuscate */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C2597A0A2EACDCF0002ED07D /* Trebiltrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trebiltrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21DACE12EB2760D0081FEE4 /* Obfuscate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = Trebiltrack;
 			packageProductDependencies = (
+				C21DACE02EB2760D0081FEE4 /* Obfuscate */,
 			);
 			productName = Trebiltrack;
 			productReference = C2597A0A2EACDCF0002ED07D /* Trebiltrack.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = C2597A012EACDCF0002ED07D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C21DACDF2EB2760D0081FEE4 /* XCRemoteSwiftPackageReference "Obfuscate" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C2597A0B2EACDCF0002ED07D /* Products */;
 			projectDirPath = "";
@@ -343,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C21DACDF2EB2760D0081FEE4 /* XCRemoteSwiftPackageReference "Obfuscate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sebjvidal/Obfuscate";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C21DACE02EB2760D0081FEE4 /* Obfuscate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C21DACDF2EB2760D0081FEE4 /* XCRemoteSwiftPackageReference "Obfuscate" */;
+			productName = Obfuscate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C2597A022EACDCF0002ED07D /* Project object */;
 }
