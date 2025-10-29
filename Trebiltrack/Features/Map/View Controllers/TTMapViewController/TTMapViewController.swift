@@ -24,7 +24,6 @@ class TTMapViewController: UIViewController, MKMapViewDelegate {
         let configuration = MKImageryMapConfiguration(elevationStyle: .realistic)
         
         mapView = MKMapView()
-        mapView.delegate = self
         mapView.preferredConfiguration = configuration
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -38,19 +37,9 @@ class TTMapViewController: UIViewController, MKMapViewDelegate {
         ])
     }
     
+    // MARK: - Lifecycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            let origin = MKMapPoint(x: 81612413.71084598, y: 43383645.564860016)
-            let size = MKMapSize(width: 105381893.0065825, height: 189792266.17112705)
-            let rect = MKMapRect(origin: origin, size: size)
-            mapView.visibleMapRect = rect
-        })
-    }
-    
-    // MARK: - MKMapViewDelegate
-    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-        print(mapView.visibleMapRect, "\n\n")
+        mapView.zoomToFitWorld()
     }
 }
