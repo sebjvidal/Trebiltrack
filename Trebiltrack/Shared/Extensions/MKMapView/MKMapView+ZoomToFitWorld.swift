@@ -22,10 +22,10 @@ extension MKMapView {
         
         guard let mapLayer, mapLayer.responds(to: updatePinchSelector) else { return }
         
-        let type = (@convention(c) (NSObject, Selector, CGPoint, Double, Double) -> Void).self
-        let implementation = mapLayer.method(for: updatePinchSelector)
-        let method = unsafeBitCast(implementation, to: type)
+        let updatePinchType = (@convention(c) (NSObject, Selector, CGPoint, Double, Double) -> Void).self
+        let updatePinchImplementation = mapLayer.method(for: updatePinchSelector)
+        let updatePinchMethod = unsafeBitCast(updatePinchImplementation, to: updatePinchType)
         
-        return method(mapLayer, updatePinchSelector, center, 20, 1)
+        return updatePinchMethod(mapLayer, updatePinchSelector, center, 20, 1)
     }
 }
