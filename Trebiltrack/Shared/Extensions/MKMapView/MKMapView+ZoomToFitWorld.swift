@@ -10,6 +10,8 @@ import Obfuscate
 
 extension MKMapView {
     func zoomToFitWorld() {
+        visibleMapRect = .world
+        
         let mapLayerString = #Obfuscate("_mapLayer")
         let mapLayerSelector = NSSelectorFromString(mapLayerString)
         
