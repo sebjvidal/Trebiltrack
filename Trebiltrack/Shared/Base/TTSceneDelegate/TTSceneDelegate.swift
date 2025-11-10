@@ -14,14 +14,12 @@ class TTSceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - UIWindowSceneDelegate
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
-        
-        let mapViewController = TTMapViewController()
-        
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [mapViewController]
+
+        let rootViewController = TTRootViewController()
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = navigationController
+        window.rootViewController = rootViewController
+        window.overrideUserInterfaceStyle = .dark
         window.makeKeyAndVisible()
         
         self.window = window
